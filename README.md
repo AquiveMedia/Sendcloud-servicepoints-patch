@@ -8,3 +8,8 @@ The customer then proceeds to fill in the rest of his address fields and select 
 The verification lets it through because all fields are filled, but the sencloud data in the quote is still empty. This quote data is to be set in the new order. So empty servicepoints in quote, empty servicepoints in order, empty servicepoints in the sencloud panel.
 
 For now we fixed it with a composer patch. Validate.js seems to run before placeOrder. We added the function that sends the shipping information to the quote again so it wont be empty. 
+
+Steps. 
+1. Download the patch file and place it somewhere in your magento2 installation. (like <magento2root>/patches
+2. Add the patch with composer using https://github.com/cweagans/composer-patches
+
