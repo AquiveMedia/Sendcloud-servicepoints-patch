@@ -1,7 +1,8 @@
 define([
     'Magento_Checkout/js/model/quote',
     'jquery',
-], function (quote, $) {
+    'Magento_Checkout/js/model/shipping-save-processor'
+], function (quote, $, shippingSaveProcessor) {
     'use strict';
     return {
         /**
@@ -11,6 +12,7 @@ define([
          * @returns {boolean|*}
          */
         validateServicePoint: function (origResult) {
+            shippingSaveProcessor.saveShippingInformation();
             var servicePointData = quote.getExtensionAttributes(),
                 selectedMethod = quote.shippingMethod();
 
